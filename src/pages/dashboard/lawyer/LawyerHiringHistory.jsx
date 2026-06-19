@@ -38,8 +38,7 @@ export default function LawyerHiringHistory() {
   return (
     <div>
       <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8">Client Requests</h2>
-      
-      {/* Mobile View (Cards) */}
+
       <div className="md:hidden space-y-4">
         {hires.map((hire) => (
            <div key={hire._id} className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4">
@@ -94,7 +93,6 @@ export default function LawyerHiringHistory() {
         )}
       </div>
 
-      {/* Desktop View (Table) */}
       <div className="hidden md:block bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700">

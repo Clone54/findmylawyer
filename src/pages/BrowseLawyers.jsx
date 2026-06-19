@@ -16,7 +16,6 @@ export default function BrowseLawyers() {
   const [feeRangeFilter, setFeeRangeFilter] = useState('');
   const [availabilityFilter, setAvailabilityFilter] = useState('');
   
-  // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
@@ -65,7 +64,6 @@ export default function BrowseLawyers() {
     <div className="bg-slate-50 dark:bg-slate-800 min-h-screen py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header & Search / Filters */}
         <div className="mb-10 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
             <div>
@@ -86,7 +84,7 @@ export default function BrowseLawyers() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-100 dark:border-slate-800 pt-6">
-            {/* Specialization Filter */}
+            
             <div>
               <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Specialization</label>
               <select 
@@ -101,7 +99,6 @@ export default function BrowseLawyers() {
               </select>
             </div>
 
-            {/* Fee Range Filter */}
             <div>
               <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Hourly Fee Range</label>
               <select 
@@ -116,7 +113,6 @@ export default function BrowseLawyers() {
               </select>
             </div>
 
-            {/* Availability Filter */}
             <div>
               <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Availability</label>
               <select 
@@ -131,7 +127,6 @@ export default function BrowseLawyers() {
           </div>
         </div>
 
-        {/* Content */}
         {loading ? (
           <LoadingScreen message="Searching Directory..." />
         ) : filteredLawyers.length === 0 ? (
@@ -177,7 +172,6 @@ export default function BrowseLawyers() {
               ))}
             </motion.div>
 
-            {/* Pagination Controls */}
             {totalPages > 1 && (
               <div className="mt-10 flex justify-center space-x-2">
                 <button 

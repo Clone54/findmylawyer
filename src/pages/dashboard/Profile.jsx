@@ -47,14 +47,13 @@ export default function Profile() {
       </div>
       
       <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
-        {/* Cover Photo Area */}
+
         <div className="h-32 bg-gradient-to-r from-blue-600 to-indigo-700 relative">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         </div>
 
         <form onSubmit={handleSubmit} className="px-8 pb-10">
-          
-          {/* Avatar Upload */}
+        
           <div className="relative flex justify-center -mt-16 mb-8">
             <div className="relative group">
               <img 
@@ -82,7 +81,6 @@ export default function Profile() {
 
           <div className="space-y-6">
             
-            {/* Full Name */}
             <div className="space-y-2">
               <label className="text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center">
                 <User className="w-4 h-4 mr-2 text-slate-400 dark:text-slate-300" />
@@ -98,7 +96,6 @@ export default function Profile() {
               />
             </div>
 
-            {/* Read-only details grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100 dark:border-slate-800">
               
               <div className="space-y-2">

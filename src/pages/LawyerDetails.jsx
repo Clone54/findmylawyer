@@ -72,7 +72,7 @@ export default function LawyerDetails() {
 
   return (
     <div className="bg-slate-50 dark:bg-slate-800 min-h-screen pb-20 font-sans">
-      {/* Hero Banner */}
+      
       <div className="h-64 bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 w-full object-cover relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
       </div>
@@ -81,7 +81,6 @@ export default function LawyerDetails() {
         <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-xl p-6 sm:p-10 mb-8 border border-slate-100 dark:border-slate-800">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             
-            {/* Profile Avatar */}
             <div className="relative shrink-0 mx-auto md:mx-0">
               <img 
                 src={profile.userId?.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(profile.userId?.fullName)}&background=random`} 
@@ -97,7 +96,6 @@ export default function LawyerDetails() {
               </div>
             </div>
 
-            {/* Profile Header Info */}
             <div className="flex-1 text-center md:text-left mt-2 w-full">
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                 <div>
@@ -121,7 +119,6 @@ export default function LawyerDetails() {
                 </div>
               </div>
 
-              {/* Badges/Stats line */}
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-6 pt-6 border-t border-slate-100 dark:border-slate-800">
                 <div className="flex items-center text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1.5 rounded-lg text-sm font-medium border border-slate-100 dark:border-slate-800">
                   <Star className="w-4 h-4 mr-2 text-yellow-500 fill-yellow-500" />
@@ -140,13 +137,10 @@ export default function LawyerDetails() {
           </div>
         </div>
 
-        {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          {/* Left Column: About & Reviews */}
           <div className="lg:col-span-2 space-y-8">
             
-            {/* About Section */}
             <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-sm p-8 border border-slate-100 dark:border-slate-800">
               <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center">
                 <Award className="w-6 h-6 mr-3 text-blue-600" />
@@ -159,7 +153,6 @@ export default function LawyerDetails() {
               </div>
             </div>
 
-            {/* Reviews Section */}
             <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-sm p-8 border border-slate-100 dark:border-slate-800">
               <div className="flex items-center justify-between mb-8">
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-50 flex items-center">
@@ -208,7 +201,6 @@ export default function LawyerDetails() {
             
           </div>
 
-          {/* Right Column: Sticky Action Card */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 bg-white dark:bg-slate-900 rounded-3xl shadow-xl p-8 border border-slate-100 dark:border-slate-800 text-center overflow-hidden relative">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
@@ -237,7 +229,6 @@ export default function LawyerDetails() {
         </div>
       </div>
 
-      {/* Hire Modal Overlay */}
       {showHireModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200">
            <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 w-full max-w-lg shadow-2xl relative animate-in zoom-in-95 duration-200">

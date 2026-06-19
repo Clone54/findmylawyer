@@ -8,7 +8,6 @@ export default function UserComments() {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Edit states
   const [editingId, setEditingId] = useState(null);
   const [editText, setEditText] = useState('');
 
@@ -59,7 +58,7 @@ export default function UserComments() {
       setComments(comments.map(c => c._id === id ? res.data : c));
       setEditingId(null);
       toast.success('Comment updated');
-      fetchComments(); // refresh to get populated lawyer data if necessary
+      fetchComments();
     } catch (err) {
       toast.error('Failed to update comment');
     }
