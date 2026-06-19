@@ -43,10 +43,6 @@ export default function MainLayout() {
               {user ? (
                 <>
                   <Link to="/dashboard" className="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors">Dashboard</Link>
-                  <button onClick={logout} className="flex items-center space-x-1 text-slate-600 dark:text-slate-400 hover:text-red-600 transition-colors">
-                    <LogOut className="w-4 h-4" />
-                    <span>Logout</span>
-                  </button>
                 </>
               ) : (
                 <div className="flex items-center space-x-3 text-sm">
