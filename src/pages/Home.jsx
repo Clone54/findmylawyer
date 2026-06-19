@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Scale, CheckCircle2, Shield, Search } from 'lucide-react';
 import LoadingScreen from '../components/LoadingScreen';
-import heroimg from '../assests/hero.jpg';
 
 export default function Home() {
   const [featuredLawyers, setFeaturedLawyers] = useState([]);
@@ -14,29 +13,29 @@ export default function Home() {
   
   useEffect(() => {
     setLoading(true);
-    axios.get('/api/lawyers?limit=6').then(res => {
-      const shuffled = res.data.sort(() => 0.5 - Math.random());
+    
+    Promise.all([
+      axios.get('/api/lawyers?limit=6'),
+      axios.get('/api/lawyers/top'),
+      axios.get('/api/stats')
+    ]).then(([featuredRes, topRes, statsRes]) => {
+      const shuffled = featuredRes.data.sort(() => 0.5 - Math.random());
       setFeaturedLawyers(shuffled.slice(0, 6));
-    }).catch(err => console.error(err))
-      .finally(() => setLoading(false));
-
-    axios.get('/api/lawyers/top').then(res => {
-      setTopLawyers(res.data);
-    }).catch(console.error);
-
-    axios.get('/api/stats').then(res => setStats(res.data)).catch(console.error);
+      setTopLawyers(topRes.data);
+      setStats(statsRes.data);
+    }).catch(err => {
+      console.error("Error fetching data:", err);
+    }).finally(() => {
+      setLoading(false);
+    });
   }, []);
 
   const categories = ['Criminal', 'Corporate', 'Family', 'Immigration', 'Real Estate', 'Intellectual Property'];
 
   return (
     <div>
-      <section 
-        className="text-white py-24 md:py-32 relative overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroimg})` }}
-      >
-        <div className="absolute inset-0 bg-slate-900/80"></div>
-        <div className="absolute inset-0 opacity-30">
+      <section className="bg-slate-900 text-white py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute right-0 top-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
@@ -170,10 +169,23 @@ export default function Home() {
             <p className="text-slate-600 dark:text-slate-400">Our most hired and trusted legal professionals.</p>
           </div>
           
-          <div className="grid grid-cols-1 select-none md:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 select-none md:grid-cols-3 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.1 } },
+              hidden: {}
+            }}
+          >
             {topLawyers.map((lawyer, idx) => (
               <motion.div
                 key={lawyer.userId?._id || idx}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
                 whileHover={{ y: -5 }}
                 className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 text-center transition shadow-sm hover:shadow-lg"
               >
@@ -199,7 +211,7 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
           
           {loading && (
              <div className="text-center w-full mt-8">
