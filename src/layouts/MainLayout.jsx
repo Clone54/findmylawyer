@@ -91,7 +91,6 @@ export default function MainLayout() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -99,7 +98,6 @@ export default function MainLayout() {
               onClick={() => setMobileMenuOpen(false)}
               className="md:hidden fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40"
             />
-            {/* Menu Panel */}
             <motion.div
               initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -162,22 +160,24 @@ export default function MainLayout() {
             <h3 className="text-slate-900 dark:text-white text-lg font-bold mb-4">LegalEase</h3>
             <p>Democratizing access to legal aid. Hire expert legal counsel with ease.</p>
           </div>
-          <div>
-            <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link to="/" className="hover:text-blue-600 dark:hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/browse" className="hover:text-blue-600 dark:hover:text-white transition-colors">Find a Lawyer</Link></li>
-              <li><Link to="/" className="hover:text-blue-600 dark:hover:text-white transition-colors">Contact</Link></li>
-              <li><Link to="/" className="hover:text-blue-600 dark:hover:text-white transition-colors">Privacy Policy</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Follow Us</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="hover:text-blue-600 dark:hover:text-white transition-colors">Twitter</a></li>
-              <li><a href="#" className="hover:text-blue-600 dark:hover:text-white transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-blue-600 dark:hover:text-white transition-colors">Facebook</a></li>
-            </ul>
+          <div className="flex gap-20 ">
+            <div>
+              <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li><Link to="/" className="hover:text-blue-600 dark:hover:text-white transition-colors">About Us</Link></li>
+                <li><Link to="/browse" className="hover:text-blue-600 dark:hover:text-white transition-colors">Find a Lawyer</Link></li>
+                <li><Link to="/" className="hover:text-blue-600 dark:hover:text-white transition-colors">Contact</Link></li>
+                <li><Link to="/" className="hover:text-blue-600 dark:hover:text-white transition-colors">Privacy Policy</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Follow Us</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="hover:text-blue-600 dark:hover:text-white transition-colors">Twitter</a></li>
+                <li><a href="#" className="hover:text-blue-600 dark:hover:text-white transition-colors">LinkedIn</a></li>
+                <li><a href="#" className="hover:text-blue-600 dark:hover:text-white transition-colors">Facebook</a></li>
+              </ul>
+            </div>
           </div>
           <div>
             <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Newsletter</h4>
