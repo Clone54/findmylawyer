@@ -4,13 +4,13 @@
 LegalEase is a digital platform that connects legal seekers, clients, and businesses with talented lawyers. The platform allows users to browse, discover, and hire legal experts. Lawyers can offer and manage their legal services, while an admin oversees the entire system.
 
 ## Live URL
-[Live Deployment](#) *(The app runs within the AI Studio preview environment)*
+[Live Deployment](https://findmylawyer-n4xu.onrender.com/)
 
 ## Key Features
 - **Role-based Dashboards**: Separate UI workflows for Users (Clients), Lawyers, and Admins.
 - **Authentication**: JWT-based login and registration.
 - **Lawyer Discovery**: Search and browse specialized lawyers with Framer Motion animations.
-- **Hiring & Payment Flow**: Users can request to hire lawyers, who can accept or reject. If accepted, users proceed to payment via Stripe.
+- **Hiring & Payment Flow**: Users can request to hire lawyers, who can accept or reject. If accepted, users proceed to payment via card (stripe demo).
 - **Comment System**: Verify-hire-first commenting system for reviews.
 - **Profile Management**: Profile picture changes, specialization selection, and hourly rate management.
 
