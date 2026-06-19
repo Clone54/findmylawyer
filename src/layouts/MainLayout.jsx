@@ -155,7 +155,7 @@ export default function MainLayout() {
       </main>
 
       <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 py-12 text-sm">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-20">
           <div>
             <h3 className="text-slate-900 dark:text-white text-lg font-bold mb-4">LegalEase</h3>
             <p>Democratizing access to legal aid. Hire expert legal counsel with ease.</p>
