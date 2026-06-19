@@ -4,6 +4,7 @@ import { useTheme } from '../context/ThemeContext';
 import { Home, Users, LayoutDashboard, LogIn, LogOut, Menu, X, Sun, Moon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from '../assests/logo.png';
 
 export default function MainLayout() {
   const { user, logout } = useAuth();
@@ -11,7 +12,6 @@ export default function MainLayout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
@@ -22,13 +22,17 @@ export default function MainLayout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center font-bold text-xl rounded-xl shadow-sm">L</div>
+              <img
+                src={logo}
+                alt="LegalEase Logo"
+                className="w-9 h-9 object-contain drop-shadow-sm rounded-[40%]"
+              />
               <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-slate-50">LegalEase</span>
             </Link>
-            
+
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-              <button 
-                onClick={toggleTheme} 
+              <button
+                onClick={toggleTheme}
                 className="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 dark:hover:bg-slate-800"
                 aria-label="Toggle theme"
               >
@@ -56,30 +60,30 @@ export default function MainLayout() {
               )}
             </nav>
 
-            <button 
-              className="md:hidden p-2 -mr-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full transition-colors relative z-50 flex items-center justify-center" 
+            <button
+              className="md:hidden p-2 -mr-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full transition-colors relative z-50 flex items-center justify-center"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <AnimatePresence mode="wait" initial={false}>
                 {mobileMenuOpen ? (
-                  <motion.div 
-                    key="close" 
-                    initial={{ opacity: 0, scale: 0.8 }} 
-                    animate={{ opacity: 1, scale: 1 }} 
-                    exit={{ opacity: 0, scale: 0.8 }} 
+                  <motion.div
+                    key="close"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.15 }}
                   >
-                     <X className="w-6 h-6" />
+                    <X className="w-6 h-6" />
                   </motion.div>
                 ) : (
-                  <motion.div 
-                    key="menu" 
-                    initial={{ opacity: 0, scale: 0.8 }} 
-                    animate={{ opacity: 1, scale: 1 }} 
-                    exit={{ opacity: 0, scale: 0.8 }} 
+                  <motion.div
+                    key="menu"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.15 }}
                   >
-                     <Menu className="w-6 h-6" />
+                    <Menu className="w-6 h-6" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -92,7 +96,7 @@ export default function MainLayout() {
         {mobileMenuOpen && (
           <>
             {/* Backdrop */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -100,7 +104,7 @@ export default function MainLayout() {
               className="md:hidden fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40"
             />
             {/* Menu Panel */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -116,14 +120,14 @@ export default function MainLayout() {
                   <Users className="w-5 h-5 text-slate-400 dark:text-slate-300" />
                   <span>Browse Lawyers</span>
                 </Link>
-                
+
                 <button onClick={toggleTheme} className="flex items-center space-x-3 px-4 py-4 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-blue-600 rounded-2xl font-semibold transition-colors text-left">
                   {theme === 'dark' ? <Sun className="w-5 h-5 text-slate-400 dark:text-slate-300" /> : <Moon className="w-5 h-5 text-slate-400 dark:text-slate-300" />}
                   <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
                 </button>
 
                 <div className="h-px bg-slate-100 dark:bg-slate-800 my-2 mx-4"></div>
-                
+
                 {user ? (
                   <>
                     <Link to="/dashboard" className="flex items-center space-x-3 px-4 py-4 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-blue-600 rounded-2xl font-semibold transition-colors">
