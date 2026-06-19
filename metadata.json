@@ -1,0 +1,6 @@
+{
+  "name": "LegalEase",
+  "description": "A digital platform that connects legal seekers with talented lawyers. Browse, discover, and hire legal experts easily.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
