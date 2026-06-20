@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Scale, CheckCircle2, Shield, Search } from 'lucide-react';
 import LoadingScreen from '../components/LoadingScreen';
+import heroImage from '../assests/hero.jpg';
 
 export default function Home() {
   const [featuredLawyers, setFeaturedLawyers] = useState([]);
