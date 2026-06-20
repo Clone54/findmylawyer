@@ -35,43 +35,41 @@ export default function Home() {
 
   return (
     <div>
-      <div>
-        <section
-          className="text-white py-24 md:py-32 relative overflow-hidden bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-slate-900/80 pointer-events-none"></div>
+      <section
+        className="text-white py-24 md:py-32 relative overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <div className="absolute inset-0 bg-slate-900/80 pointer-events-none"></div>
 
-          <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6"
-            >
-              Find &amp; Hire <span className="text-blue-500">Expert Legal Counsel</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto"
-            >
-              Democratizing access to legal aid. Connect with top-tier professionals seamlessly.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <Link to="/browse" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg inline-flex items-center space-x-2 transition shadow-lg shadow-blue-900/50">
-                <Search className="w-5 h-5" />
-                <span>Browse Lawyers</span>
-              </Link>
-            </motion.div>
-          </div>
-        </section>
-      </div>
+        <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6"
+          >
+            Find &amp; Hire <span className="text-blue-500">Expert Legal Counsel</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto"
+          >
+            Democratizing access to legal aid. Connect with top-tier professionals seamlessly.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Link to="/browse" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg inline-flex items-center space-x-2 transition shadow-lg shadow-blue-900/50">
+              <Search className="w-5 h-5" />
+              <span>Browse Lawyers</span>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       <section className="py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4">
@@ -125,7 +123,7 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             variants={{
               visible: { transition: { staggerChildren: 0.1 } },
               hidden: {}
@@ -178,7 +176,7 @@ export default function Home() {
             className="grid grid-cols-1 select-none md:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             variants={{
               visible: { transition: { staggerChildren: 0.1 } },
               hidden: {}
