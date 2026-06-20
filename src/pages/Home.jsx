@@ -144,7 +144,7 @@ export default function Home() {
               </motion.div>
             ))}
             {loading && (
-                <div className="text-center w-full mt-8">
+                <div className="col-span-full text-center w-full mt-8">
                   <LoadingScreen message="Loading featured professionals..." />
                 </div>
             )}
