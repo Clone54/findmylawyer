@@ -35,7 +35,6 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Section */}
       <section
           className="text-white py-24 md:py-32 relative overflow-hidden bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -72,7 +71,6 @@ export default function Home() {
           </div>
         </section>
 
-      {/* Overview Section */}
       <section className="py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -92,7 +90,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Categories */}
       <section className="py-20 bg-slate-50 dark:bg-slate-800">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -115,7 +112,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Section */}
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -148,7 +144,7 @@ export default function Home() {
               </motion.div>
             ))}
             {loading && (
-                <div className="col-span-full">
+                <div className="text-center w-full mt-8">
                   <LoadingScreen message="Loading featured professionals..." />
                 </div>
             )}
@@ -159,7 +155,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Top Legal Experts */}
       <section className="py-20 bg-slate-50 dark:bg-slate-800">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
