@@ -33,7 +33,7 @@ export default function AnalyticsOverview() {
     { title: 'Total Clients', value: stats.totalUsers, icon: Users, color: 'bg-blue-100 text-blue-600' },
     { title: 'Total Lawyers', value: stats.totalLawyers, icon: Briefcase, color: 'bg-purple-100 text-purple-600' },
     { title: 'Total Hirings', value: stats.totalHires, icon: FileText, color: 'bg-green-100 text-green-600' },
-    { title: 'Total Revenue', value: <><span className="font-extrabold text-[1.1em] mr-[2px]">৳</span>{stats.totalRevenue.toLocaleString()}</>, icon: Banknote, color: 'bg-yellow-100 text-yellow-600' },
+    { title: 'Total Revenue', value: <><span className="font-extrabold text-[1.1em] mr-[2px]">৳</span>{(stats?.totalRevenue || 0).toLocaleString()}</>, icon: Banknote, color: 'bg-yellow-100 text-yellow-600' },
   ];
 
   return (
